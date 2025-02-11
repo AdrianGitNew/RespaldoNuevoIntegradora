@@ -4,6 +4,7 @@ import { useNavigation } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
+
 const PerfilEmpresaScreen = () => {
     const [InfoEmpresa, setInfoEmpresa] = useState({});
     const navigation = useNavigation();

@@ -101,6 +101,7 @@ function PerfilBaseStack() {
             <PerfilBaseStackNavigator.Screen name="Registro" component={RegistroUserScreen} />
             <PerfilBaseStackNavigator.Screen name="LoginScreen" component={LoginScreen} />
             <PerfilBaseStackNavigator.Screen name="RegistroEmpresa" component={RegistroEmpresaScreen} />
+            <PerfilBaseStackNavigator.Screen name="PerfilScreen" component={PerfilScreen} />
         </PerfilBaseStackNavigator.Navigator>
     );
 }
@@ -220,17 +221,19 @@ function Mytabs() {
                 }}
             />
             )}
-            <Tab.Screen 
-                name="PerfilBase" 
-                component={PerfilBaseStack} 
-                options={{
-                    tabBarLabel: 'Perfil',
-                    tabBarIcon: ({ color, size }) => (
-                        <FontAwesome6 name="user-large" size={24} color="#266150" />
-                    ),
-                    headerShown: false,
-                }}
-            />
+            {userType === null && (
+                <Tab.Screen 
+                    name="PerfilBase" 
+                    component={PerfilBaseStack} 
+                    options={{
+                        tabBarLabel: 'Perfil',
+                        tabBarIcon: ({ color, size }) => (
+                            <FontAwesome6 name="user-large" size={24} color="#266150" />
+                        ),
+                        headerShown: false,
+                    }}
+                />
+            )}
         </Tab.Navigator>
     );
 }
